@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+<h1 class="h3 mb-3"><i class="bi bi-bar-chart-line me-2"></i>Agenda académica y reportes</h1>
+
+<div class="card shadow-sm mb-3 no-imprimir">
+  <div class="card-body">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label" for="tipo">Información</label>
+        <select class="form-select" id="tipo">
+          <option value="asistencia">Asistencia</option>
+          <option value="planeaciones">Planeaciones</option>
+          <option value="actividades">Actividades</option>
+          <option value="calificaciones">Calificaciones</option>
+          <option value="incidentes">Incidentes</option>
+        </select>
+      </div>
+      <div class="col-md-3" id="grupoAsignacion">
+        <label class="form-label" for="asignacion">Curso y asignatura</label>
+        <select class="form-select" id="asignacion"></select>
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label" for="desde">Desde</label>
+        <input class="form-control" type="date" id="desde">
+      </div>
+      <div class="col-6 col-md-2">
+        <label class="form-label" for="hasta">Hasta</label>
+        <input class="form-control" type="date" id="hasta">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-aula w-100" id="btnConsultar" type="button">Consultar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-header bg-white d-flex justify-content-between align-items-center no-imprimir">
+    <span class="fw-semibold" id="tituloResultado">Resultados</span>
+    <div class="d-flex gap-2">
+      <button class="btn btn-sm btn-outline-secondary" id="btnImprimir" type="button"><i class="bi bi-printer me-1"></i>Imprimir / PDF</button>
+      <button class="btn btn-sm btn-outline-secondary" id="btnCsv" type="button"><i class="bi bi-filetype-csv me-1"></i>CSV</button>
+    </div>
+  </div>
+  <div class="tabla-scroll">
+    <table class="table table-striped align-middle mb-0">
+      <thead class="table-light" id="encabezado"></thead>
+      <tbody id="cuerpo"><tr><td class="text-muted p-4">Elige los filtros y pulsa «Consultar».</td></tr></tbody>
+    </table>
+  </div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<div id="pagina" data-modulo="<%= JSON.stringify(modulo) %>">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <h1 class="h3 mb-0"><i class="bi <%= modulo.icono %> me-2"></i><%= modulo.titulo %></h1>
+    <button id="btnNuevo" class="btn btn-aula" type="button"><i class="bi bi-plus-lg me-1"></i>Nuevo</button>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="tabla-scroll">
+      <table class="table table-hover align-middle mb-0">
+        <thead id="encabezado" class="table-light"></thead>
+        <tbody id="cuerpo"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <form id="formulario" class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="tituloModal"></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="errorForm" class="alert alert-danger d-none" role="alert"></div>
+          <div id="camposForm" class="row g-3"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-aula">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>

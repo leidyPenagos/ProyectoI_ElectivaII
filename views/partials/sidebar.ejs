@@ -1,0 +1,20 @@
+<div class="offcanvas-lg offcanvas-start menu-lateral" tabindex="-1" id="menuLateral">
+  <div class="offcanvas-header d-lg-none">
+    <h5 class="offcanvas-title">Menú</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#menuLateral" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <nav class="nav flex-column w-100 py-2">
+      <a class="nav-link <%= activo === 'dashboard' ? 'active' : '' %>" href="/dashboard"><i class="bi bi-speedometer2"></i> Panel</a>
+      <% modulos.forEach(function (m) { %>
+        <a class="nav-link <%= activo === m.clave ? 'active' : '' %>" href="/modulo/<%= m.clave %>">
+          <i class="bi <%= m.icono %>"></i> <%= m.titulo %>
+        </a>
+      <% }) %>
+      <a class="nav-link <%= activo === 'asistencias' ? 'active' : '' %>" href="/asistencias"><i class="bi bi-check2-square"></i> Asistencia</a>
+      <a class="nav-link <%= activo === 'reportes' ? 'active' : '' %>" href="/reportes"><i class="bi bi-bar-chart-line"></i> Agenda y reportes</a>
+      <a class="nav-link <%= activo === 'perfil' ? 'active' : '' %>" href="/perfil"><i class="bi bi-person-circle"></i> Mi perfil</a>
+      <a class="nav-link" href="/api-docs" target="_blank" rel="noopener"><i class="bi bi-braces"></i> Swagger (API)</a>
+    </nav>
+  </div>
+</div>
